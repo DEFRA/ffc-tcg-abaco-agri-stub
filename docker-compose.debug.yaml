@@ -1,3 +1,3 @@
 services:
-  ffc-template-node:
+  ffc-tcg-abaco-agri-stub:
     command: npm run start:debug

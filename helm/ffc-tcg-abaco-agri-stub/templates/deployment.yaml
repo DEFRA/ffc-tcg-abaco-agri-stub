@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "ffc-tcg-abaco-agri-stub.deployment") -}}
+{{- define "ffc-tcg-abaco-agri-stub.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "ffc-tcg-abaco-agri-stub.container") }}
+{{- end -}}
