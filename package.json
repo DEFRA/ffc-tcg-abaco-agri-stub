@@ -1,6 +1,6 @@
 {
   "name": "ffc-tcg-abaco-agri-stub",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TCG Abaco Agri stub",
   "homepage": "https://github.com/DEFRA/ffc-tcg-abaco-agri-stub",
   "main": "app/index.js",
