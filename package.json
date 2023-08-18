@@ -19,7 +19,7 @@
   ],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/catbox-redis": "7.0.2",
+    "@hapi/catbox-redis": "6.0.2",
     "@hapi/hapi": "21.3.2",
     "applicationinsights": "2.3.5",
     "hapi-pino": "12.1.0",
