@@ -1,10 +1,11 @@
 const Hoek = require('@hapi/hoek')
-const { get, set } = require('./base')
+const { get } = require('./get')
+const { set } = require('./set')
 
-const update = async (request, cacheName, value) => {
-  const existing = await get(request, cacheName)
+const update = async (request, cacheName, key, value) => {
+  const existing = await get(request, cacheName, key)
   Hoek.merge(existing, value, { mergeArrays: false })
-  await set(request, cacheName, existing)
+  await set(request, cacheName, key, existing)
   return existing
 }
 

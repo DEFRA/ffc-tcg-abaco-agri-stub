@@ -26,7 +26,7 @@ const createServer = async () => {
   })
 
   const partyCache = server.cache({ cache: cacheConfig.partyCacheName, segment: cacheConfig.partyCacheName, expiresIn: cacheConfig.expiresIn })
-  server.app.partyCache = partyCache
+  server.app.cache = { [cacheConfig.partyCacheName]: partyCache }
 
   await server.register(require('./plugins/router'))
   await server.register(require('./plugins/logging'))
