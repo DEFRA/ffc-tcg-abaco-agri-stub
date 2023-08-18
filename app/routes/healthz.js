@@ -1,7 +1,8 @@
+const { GET } = require('../constants/http-verbs')
 const { OK } = require('../constants/ok')
 
 module.exports = {
-  method: 'GET',
+  method: GET,
   path: '/healthz',
   options: {
     auth: false
