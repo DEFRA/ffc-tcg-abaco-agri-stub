@@ -13,3 +13,13 @@ services:
     volumes:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
+
+  ffc-tcg-abaco-agri-stub-redis:
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    command: redis-server --dir /data --save 5 1
+
+volumes:
+  redis_data:
