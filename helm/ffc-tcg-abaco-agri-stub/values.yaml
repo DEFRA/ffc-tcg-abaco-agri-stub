@@ -26,6 +26,8 @@ container:
   limitMemory: 100Mi
   limitCpu: 100m
   port: 3052
+  redisHostname: redis-redis-ha.default
+  redisPassword: redis
 
 livenessProbe:
   path: /healthz
