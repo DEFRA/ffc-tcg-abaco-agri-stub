@@ -28,6 +28,8 @@ container:
   port: 3052
   redisHostname: redis-redis-ha.default
   redisPassword: redis
+  redisPort: 6379
+  redisPartition: ffc-tcg-abaco-agri-stub
 
 livenessProbe:
   path: /healthz
