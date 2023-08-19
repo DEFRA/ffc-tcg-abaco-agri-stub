@@ -22,7 +22,9 @@
     "@hapi/catbox-redis": "6.0.2",
     "@hapi/hapi": "21.3.2",
     "applicationinsights": "2.3.5",
+    "hapi-auth-bearer-token": "8.0.0",
     "hapi-pino": "12.1.0",
+    "jsonwebtoken": "9.0.1",
     "log-timestamp": "0.3.0",
     "uuid": "9.0.0"
   },
