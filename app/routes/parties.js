@@ -19,8 +19,9 @@ module.exports = [{
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const id = uuidv4()
-    await set(request, partyCacheName, id, { ...request.payload, id })
-    return h.response(OK).code(201)
+    const party = { ...request.payload, id }
+    await set(request, partyCacheName, id, party)
+    return h.response(party).code(201)
   }
 }, {
   method: GET,
@@ -35,8 +36,9 @@ module.exports = [{
   path: '/master/api-priv/v1/parties/{id}',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
-    await update(request, partyCacheName, request.params.id, request.payload)
-    return h.response(OK).code(200)
+    const party = { ...request.payload, id: request.params.id }
+    await update(request, partyCacheName, request.params.id, party)
+    return h.response(party).code(200)
   }
 }, {
   method: DELETE,
