@@ -7,7 +7,7 @@ const { USER } = require('../constants/scopes')
 
 module.exports = [{
   method: GET,
-  path: '/master/api-priv/v1/parties',
+  path: '/party-registry/master/api-priv/v1/parties',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const parties = await getAll(request, partyCacheName)
@@ -15,7 +15,7 @@ module.exports = [{
   }
 }, {
   method: POST,
-  path: '/master/api-priv/v1/parties',
+  path: '/party-registry/master/api-priv/v1/parties',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const id = uuidv4()
@@ -25,7 +25,7 @@ module.exports = [{
   }
 }, {
   method: GET,
-  path: '/master/api-priv/v1/parties/{id}',
+  path: '/party-registry/master/api-priv/v1/parties/{id}',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const party = await get(request, partyCacheName, request.params.id)
@@ -33,7 +33,7 @@ module.exports = [{
   }
 }, {
   method: PUT,
-  path: '/master/api-priv/v1/parties/{id}',
+  path: '/party-registry/master/api-priv/v1/parties/{id}',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const party = { ...request.payload, id: request.params.id }
@@ -42,7 +42,7 @@ module.exports = [{
   }
 }, {
   method: DELETE,
-  path: '/master/api-priv/v1/parties/{id}',
+  path: '/party-registry/master/api-priv/v1/parties/{id}',
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     await drop(request, partyCacheName, request.params.id)
