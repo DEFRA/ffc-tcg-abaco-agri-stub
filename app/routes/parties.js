@@ -11,7 +11,11 @@ module.exports = [{
   options: { auth: { strategy: 'simple', scope: [USER] } },
   handler: async (request, h) => {
     const parties = await getAll(request, partyCacheName)
-    return h.response(parties).code(200)
+    return h.response({
+      count: parties.length,
+      nextKey: null,
+      records: parties
+    }).code(200)
   }
 }, {
   method: POST,
@@ -21,7 +25,7 @@ module.exports = [{
     const id = uuidv4()
     const party = { ...request.payload, id }
     await set(request, partyCacheName, id, party)
-    return h.response(party).code(201)
+    return h.response(party).code(200)
   }
 }, {
   method: GET,
