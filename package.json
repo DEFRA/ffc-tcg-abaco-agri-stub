@@ -21,7 +21,7 @@
   "dependencies": {
     "@hapi/catbox-redis": "6.0.2",
     "@hapi/hapi": "21.3.2",
-    "applicationinsights": "2.3.5",
+    "applicationinsights": "2.7.3",
     "hapi-auth-bearer-token": "8.0.0",
     "hapi-pino": "12.1.0",
     "jsonwebtoken": "9.0.1",
